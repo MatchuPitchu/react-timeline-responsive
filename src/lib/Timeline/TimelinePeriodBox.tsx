@@ -1,5 +1,5 @@
 import classes from './Timeline.module.css';
-import type { TimelineData } from './timeline.types';
+import type { TimelineData } from '../index.d';
 
 interface ITimelinePeriodBox {
   item: Required<TimelineData>;

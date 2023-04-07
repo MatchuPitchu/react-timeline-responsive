@@ -1,5 +1,5 @@
 import { Timeline } from './lib';
-import type { Theme, TimelineData } from './lib/Timeline/timeline.types';
+import type { Theme, TimelineData } from './lib';
 import './styles.css';
 
 const timelineData: TimelineData[] = [

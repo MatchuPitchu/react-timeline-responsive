@@ -2,7 +2,7 @@ import { useState } from 'react';
 import classes from './Timeline.module.css';
 import { TimelineBar } from './TimelineBar';
 import { TimelinePeriodBox } from './TimelinePeriodBox';
-import type { TimelineData, Groups } from './timeline.types';
+import type { TimelineData, Groups } from '../index.d';
 
 interface ITimelineContent {
   timeline: { year: number; month: string }[];

@@ -1,5 +1,5 @@
 import classes from './Timeline.module.css';
-import type { TimelineData } from './timeline.types';
+import type { TimelineData } from '../index.d';
 
 interface ITimelineBar {
   item: Required<TimelineData>;
@@ -17,7 +17,7 @@ export const TimelineBar = ({ item, index, isActive, onBarUpdate, accentColor }:
       className={classes.periods__bar}
       style={{
         gridArea: `${item.startRowGrid} / ${item.column} / ${item.endRowGrid}`,
-        backgroundColor
+        backgroundColor,
       }}
       onMouseEnter={(_) => onBarUpdate(index)}
       onMouseLeave={(_) => onBarUpdate()}

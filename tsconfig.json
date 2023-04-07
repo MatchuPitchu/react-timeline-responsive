@@ -17,7 +17,11 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "./dist",
+    "paths": {
+      "react-timeline-responsive": ["./src/lib/index.ts"]
+    },
+    "typeRoots": ["./src/lib/index.d.ts"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

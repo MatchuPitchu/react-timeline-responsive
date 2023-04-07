@@ -1,4 +1,4 @@
-import type { HexToHslReturn, TimelineData } from './timeline.types';
+import type { HexToHslReturn, TimelineData } from '../index.d';
 
 export const notNullOrUndefined = <T>(value: T | null | undefined): value is T => value !== null && value !== undefined;
 

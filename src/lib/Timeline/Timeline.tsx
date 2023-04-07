@@ -4,7 +4,7 @@ import { useTimeline } from '../hooks/useTimeline';
 import { TimelineContent } from './TimelineContent';
 import { TimelineLayout } from './TimelineLayout';
 import { hexToHsl, setCSSVariable } from './timeline.utils';
-import type { Direction, LocalesArgument, Theme, TimelineData } from './timeline.types';
+import type { Direction, LocalesArgument, Theme, TimelineData } from '../index.d';
 
 interface ITimeline {
   timelineData: TimelineData[];

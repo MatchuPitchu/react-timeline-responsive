@@ -1,5 +1,5 @@
 import { hexToHsl, notNullOrUndefined } from '../Timeline/timeline.utils';
-import type { TimelineData, Groups } from '../Timeline/timeline.types';
+import type { TimelineData, Groups } from '..';
 
 const generateColorVariants = (hex: string, number: number): `hsl(${string}` | undefined => {
   const baseHSLColor = hexToHsl(hex);
