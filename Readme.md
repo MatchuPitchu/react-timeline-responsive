@@ -18,7 +18,7 @@ The Timeline component is type safe and was designed in `TypeScript`.
 
 ## Installation
 
-You can install this component via npm: `npm install react-timeline-component`
+You can install this component via npm: `npm install react-timeline`
 
 ## Usage
 
