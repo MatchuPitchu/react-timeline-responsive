@@ -1,24 +1,52 @@
 {
-  "name": "react-timeline-responsive-typescript",
+  "name": "react-timeline",
   "version": "1.0.0",
   "private": false,
+  "description": "React Timeline is a customizable and responsive timeline component for React applications. You can use it to display a timeline of events or any other chronological data. ",
+  "license": "MIT",
+  "author": "Michael Flohr (https://www.michaelflohr.de)",
+  "keywords": [
+    "react",
+    "typescript",
+    "timeline",
+    "timeline-component",
+    "sticky",
+    "grid"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatchuPitchu/react-timeline.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MatchuPitchu/react-timeline/issues"
+  },
+  "main": "./dist/react-timeline.umd.cjs",
+  "module": "./dist/react-timeline.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/react-timeline.js",
+      "require": "./dist/react-timeline.umd.cjs"
+    }
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "clean": "rm -rf dist",
+    "build:package": "npm run clean && npm run build && cp package.json README.md ./dist"
   },
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@types/eslint": "^8.4.10",
+    "@types/node": "^18.15.11",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
+    "@vitejs/plugin-react": "^3.1.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
@@ -28,8 +56,11 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.8.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "^4.9.4",
     "vite": "^4.2.0",
+    "vite-plugin-dts": "^2.2.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-svgr": "^2.4.0",
     "vite-plugin-tsc-watch": "^2.0.1",

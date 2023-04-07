@@ -10,11 +10,11 @@ The Timeline component is type safe and was designed in `TypeScript`.
 
 - `desktop`
 
-![React Timeline Component Desktop View](./public/assets/react-timeline-desktop.gif)
+![React Timeline Component Desktop View](https://github.com/MatchuPitchu/react-timeline/blob/main/npm-assets/react-timeline-desktop.gif?raw=true)
 
 - `mobile`
 
-![React Timeline Component Mobile View](./public/assets/react-timeline-mobile.gif)
+![React Timeline Component Mobile View](https://github.com/MatchuPitchu/react-timeline/blob/main/npm-assets/react-timeline-mobile.gif?raw=true)
 
 ## Installation
 
@@ -25,29 +25,26 @@ You can install this component via npm: `npm install react-timeline-component`
 To use the component, import it into your project and render it with the necessary props.
 
 ```tsx
-import { Timeline } from 'react-timeline-component';
-import { Theme, TimelineData } from 'react-timeline-component/dist/timeline.types';
-
 const timelineData = [
   {
-    startPeriod: '2001-05',
-    endPeriod: '2003-10',
+    startPeriod: '2010-05',
+    endPeriod: '20018-10',
     title: 'Title of event/period 1',
     organization: 'Organization 1',
     content: ['Content 1 line 1', 'Content 1 line 2'],
     group: 1,
   },
   {
-    startPeriod: '2003-03',
-    endPeriod: '2007-11',
+    startPeriod: '2015-03',
+    endPeriod: '2021-11',
     title: 'Title of event/period 2',
     organization: 'Organization 2',
     content: ['Content 2 line 1', 'Content 2 line 2', 'Content 2 line 3'],
     group: 1,
   },
   {
-    startPeriod: '2008-02',
-    endPeriod: '2012-01',
+    startPeriod: '2022-01',
+    endPeriod: '',
     title: 'Title of event/period 3',
     organization: 'Organization 3',
     content: ['Content 3 line 1'],
