@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { generateArray, getSortedData, getTimelineBorders } from '../Timeline/timeline.utils';
-import type { Direction, LocalesArgument, TimelineData } from '..';
+import type { Direction, LocalesArgument, TimelineData } from '../index.d';
 
 export const useTimeline = (timelineData: TimelineData[], language: LocalesArgument, direction: Direction) => {
   const sortedData = getSortedData(timelineData);
