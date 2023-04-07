@@ -6,20 +6,6 @@ import { TimelineLayout } from './TimelineLayout';
 import { hexToHsl, setCSSVariable } from './timeline.utils';
 import type { Direction, LocalesArgument, Theme, TimelineData } from './timeline.types';
 
-// Notices
-
-// - start is year of first period in timelineData
-// - is period still active, then use empty string for endDate ('')
-// - define language prop for date language format (e.g. 'de-DE')
-// - define prop in which direction timeline goes ('asc' | 'desc')
-// - color theming props
-// - set group number for a period (optional)
-
-// Advices:
-// - memoize your timelineData and theme object or if you generate dynamically your timelineData object,
-// use the React `useMemo` hook to avoid un-necessaire re-rendering of the Timeline component
-// - if you have overlapping periods, pay attention to have at the maximum 3 or 4, otherwise the layout becomes cumbersome
-
 interface ITimeline {
   timelineData: TimelineData[];
   language: LocalesArgument;

@@ -65,5 +65,8 @@
     "vite-plugin-svgr": "^2.4.0",
     "vite-plugin-tsc-watch": "^2.0.1",
     "vite-tsconfig-paths": "^4.0.5"
+  },
+  "peerDependencies": {
+    "react": ">=17"
   }
 }
