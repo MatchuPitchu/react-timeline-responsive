@@ -1,4 +1,3 @@
-import classes from './Timeline.module.css';
 import type { ReactNode } from 'react';
 
 interface ITimelineLayout {
@@ -11,17 +10,17 @@ export const TimelineLayout = ({ timeline, years, children }: ITimelineLayout) =
   const { length: numberOfYears } = years;
 
   return (
-    <div className={classes.timeline}>
-      <div className={classes.years} style={{ gridTemplateRows: `repeat(${numberOfYears}, 1fr)` }}>
+    <div className='timeline'>
+      <div className='timeline-years' style={{ gridTemplateRows: `repeat(${numberOfYears}, 1fr)` }}>
         {years.map((year) => (
-          <div key={year} className={classes.years__year}>
+          <div key={year} className='timeline-years__year'>
             {year}
           </div>
         ))}
       </div>
-      <div className={classes.months} style={{ gridTemplateRows: `repeat(${timeline.length}, 1fr)` }}>
+      <div className='timeline-months' style={{ gridTemplateRows: `repeat(${timeline.length}, 1fr)` }}>
         {timeline.map(({ year, month }) => (
-          <div key={`${year}-${month}`} className={classes.months__month}>
+          <div key={`${year}-${month}`} className='timeline-months__month'>
             {month}
           </div>
         ))}

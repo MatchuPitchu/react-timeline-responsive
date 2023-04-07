@@ -1,4 +1,3 @@
-import classes from './Timeline.module.css';
 import type { TimelineData } from '../index.d';
 
 interface ITimelineBar {
@@ -14,7 +13,7 @@ export const TimelineBar = ({ item, index, isActive, onBarUpdate, accentColor }:
 
   return (
     <div
-      className={classes.periods__bar}
+      className='timeline-periods__bar'
       style={{
         gridArea: `${item.startRowGrid} / ${item.column} / ${item.endRowGrid}`,
         backgroundColor,

@@ -1,6 +1,6 @@
 {
   "name": "react-timeline-responsive",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "private": false,
   "description": "React Timeline is a customizable and responsive timeline component for React applications. You can use it to display a timeline of events or any other chronological data. ",
   "license": "MIT",
@@ -20,13 +20,13 @@
   "bugs": {
     "url": "https://github.com/MatchuPitchu/react-timeline-responsive/issues"
   },
-  "main": "./dist/react-timeline-responsive.umd.cjs",
-  "module": "./dist/react-timeline-responsive.js",
-  "types": "./dist/index.d.ts",
+  "main": "./react-timeline-responsive.umd.js",
+  "module": "./react-timeline-responsive.es.js",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/react-timeline-responsive.js",
-      "require": "./dist/react-timeline-responsive.umd.cjs"
+      "import": "./react-timeline-responsive.es.js",
+      "require": "./react-timeline-responsive.umd.js"
     }
   },
   "type": "module",
@@ -70,6 +70,6 @@
     "react": ">=17"
   },
   "dependencies": {
-    "react-timeline-responsive": "^1.0.0"
+    "react-timeline-responsive": "^1.0.2"
   }
 }

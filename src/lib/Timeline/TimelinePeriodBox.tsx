@@ -1,4 +1,3 @@
-import classes from './Timeline.module.css';
 import type { TimelineData } from '../index.d';
 
 interface ITimelinePeriodBox {
@@ -16,21 +15,21 @@ export const TimelinePeriodBox = ({ item, isActive, getFormattedDateString, acce
   return (
     <div
       key={item.title}
-      className={`${classes['periods-content__period']} ${isActive ? `${classes.active}` : ''}`}
+      className={`timeline-periods-content__period ${isActive ? 'active' : ''}`}
       style={{
         gridArea: `${item.startRowGrid} / ${item.column} / ${item.endRowGrid}`,
         boxShadow,
       }}
     >
-      <div className={classes['sticky-content']}>
-        <div className={classes['sticky-content__date']}>
+      <div className='timeline-sticky-content'>
+        <div className='timeline-sticky-content__date'>
           {getFormattedDateString(item.startPeriod)} – {getFormattedDateString(item.endPeriod)}
         </div>
-        {item.title && <div className={classes['sticky-content__title']}>{item.title}</div>}
-        {item.organization && <div className={classes['sticky-content__organization']}>{item.organization}</div>}
-        <p className={classes['sticky-content__text']}>
+        {item.title && <div className='timeline-sticky-content__title'>{item.title}</div>}
+        {item.organization && <div className='timeline-sticky-content__organization'>{item.organization}</div>}
+        <p className='timeline-sticky-content__text'>
           {item.content.map((contentItem, index) => (
-            <span key={index} className={classes['sticky-content__text-item']}>
+            <span key={index} className='timeline-sticky-content__text-item'>
               {contentItem}
             </span>
           ))}

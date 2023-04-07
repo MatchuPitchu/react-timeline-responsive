@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import classes from './Timeline.module.css';
 import { TimelineBar } from './TimelineBar';
 import { TimelinePeriodBox } from './TimelinePeriodBox';
 import type { TimelineData, Groups } from '../index.d';
@@ -18,7 +17,7 @@ export const TimelineContent = ({ timeline, transformedData, getFormattedDateStr
 
   return (
     <>
-      <div className={classes.periods} style={{ gridTemplateRows: `repeat(${timeline.length}, 1fr)` }}>
+      <div className='timeline-periods' style={{ gridTemplateRows: `repeat(${timeline.length}, 1fr)` }}>
         {transformedData.map((item, index) => (
           <TimelineBar
             key={item.title}
@@ -30,7 +29,7 @@ export const TimelineContent = ({ timeline, transformedData, getFormattedDateStr
           />
         ))}
       </div>
-      <div className={classes['periods-content']} style={{ gridTemplateRows: `repeat(${timeline.length}, 1fr)` }}>
+      <div className='timeline-periods-content' style={{ gridTemplateRows: `repeat(${timeline.length}, 1fr)` }}>
         {transformedData.map((item, index) => (
           <TimelinePeriodBox
             key={item.title}

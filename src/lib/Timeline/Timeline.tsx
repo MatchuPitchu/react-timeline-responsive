@@ -5,6 +5,7 @@ import { TimelineContent } from './TimelineContent';
 import { TimelineLayout } from './TimelineLayout';
 import { hexToHsl, setCSSVariable } from './timeline.utils';
 import type { Direction, LocalesArgument, Theme, TimelineData } from '../index.d';
+import './styles.css';
 
 interface ITimeline {
   timelineData: TimelineData[];
