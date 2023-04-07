@@ -6,6 +6,16 @@ Just provide your timeline data and your desired theme, and the `Timeline` compo
 
 The Timeline component is type safe and was designed in `TypeScript`.
 
+## Demo View
+
+- `desktop`
+
+![React Timeline Component Desktop View](./public/assets/react-timeline-desktop.gif)
+
+- `mobile`
+
+![React Timeline Component Mobile View](./public/assets/react-timeline-mobile.gif)
+
 ## Installation
 
 You can install this component via npm: `npm install react-timeline-component`

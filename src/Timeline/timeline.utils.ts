@@ -12,6 +12,10 @@ export const isYearNumber = (str: string) => /\d{4}/.test(str);
 export const getTimelineBorders = (data: TimelineData[]) => {
   const getYear = (dateString: string): number | null => {
     const str = dateString.substring(0, 4);
+    if (!str) {
+      return new Date().getFullYear();
+    }
+
     if (isYearNumber(str)) {
       return Number(str);
     }
@@ -71,6 +75,6 @@ export const hexToHsl = (hex: string): HexToHslReturn => {
     hsl: `hsl(${h}, ${s}%, ${l}%)`,
     hue: `${h}`,
     saturation: `${s}%`,
-    lightness: `${l}%`
+    lightness: `${l}%`,
   };
 };
