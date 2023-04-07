@@ -62,6 +62,7 @@ const direction = 'asc'; // in which direction timeline goes ('asc' | 'desc')
 const theme: Theme = {
   colorAccentPrimary: '#d3a418',
   colorAccentSecondary: '#ff4f04',
+  colorText: '#e1e1e1',
   colorBackground: '#242528',
   colorBarHex: '#f7cc4b',
   colorGradation: 4,
@@ -117,6 +118,7 @@ const App = () => {
 | :------------------- | :---------------- | :-------------------------------------------------------------------------------------- |
 | colorAccentPrimary   | string (required) | The primary color accent of the timeline. Must be in hex format, starting with a `#`.   |
 | colorAccentSecondary | string (optional) | The secondary color accent of the timeline. Must be in hex format, starting with a `#`. |
+| colorText            | string (optional) | The text color of the timeline. Must be in hex format, starting with a `#`.             |
 | colorBackground      | string (required) | The background color of some timeline elements.                                         |
 | colorBarHex          | string (required) | The color of the timeline bar. Must be in hex format, starting with a `#`.              |
 | colorGradation       | number (optional) | The gradation between the automatically generated color variants for the period bars.   |
