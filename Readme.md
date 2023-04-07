@@ -10,15 +10,15 @@ The Timeline component is type safe and was designed in `TypeScript`.
 
 - `desktop`
 
-![React Timeline Component Desktop View](https://github.com/MatchuPitchu/react-timeline/blob/main/npm-assets/react-timeline-desktop.gif?raw=true)
+![React Timeline Component Desktop View](https://github.com/MatchuPitchu/react-responsive-timeline/blob/main/npm-assets/react-responsive-timeline-desktop.gif?raw=true)
 
 - `mobile`
 
-![React Timeline Component Mobile View](https://github.com/MatchuPitchu/react-timeline/blob/main/npm-assets/react-timeline-mobile.gif?raw=true)
+![React Timeline Component Mobile View](https://github.com/MatchuPitchu/react-responsive-timeline/blob/main/npm-assets/react-responsive-timeline-mobile.gif?raw=true)
 
 ## Installation
 
-You can install this component via npm: `npm install react-timeline`
+You can install this component via npm: `npm install react-responsive-timeline`
 
 ## Usage
 
