@@ -13,8 +13,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/lib/index.tsx'),
-      name: 'React Responsive Timeline',
-      fileName: (format) => `react-responsive-timeline.${format}.js`,
+      name: 'React Timeline Responsive',
+      fileName: (format) => `react-timeline-responsive.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
