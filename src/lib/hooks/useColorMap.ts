@@ -1,7 +1,7 @@
 import { hexToHsl, notNullOrUndefined } from '../Timeline/timeline.utils';
-import type { Groups, ProcessedTimelineData } from '../index.d';
+import type { AccentColors, Groups, ProcessedTimelineData } from '../index.d';
 
-const generateColorVariants = (hex: string, number: number): `hsl(${string}` | undefined => {
+const generateColorVariants = (hex: `#${string}`, number: number): `hsl(${string}` | undefined => {
   const baseHSLColor = hexToHsl(hex);
 
   const hueRange = 0;
@@ -17,7 +17,7 @@ const generateColorVariants = (hex: string, number: number): `hsl(${string}` | u
   return `hsl(${variantHue}, ${variantSat}%, ${variantLight}%)`;
 };
 
-export const useColorMap = (data: ProcessedTimelineData[], colors: (string | undefined)[]) => {
+export const useColorMap = (data: ProcessedTimelineData[], colors: AccentColors) => {
   // reverse() for right color order (primary, secondary -> look at remainder below)
   const cleanedColors = colors.filter(notNullOrUndefined).reverse();
 
@@ -32,9 +32,7 @@ export const useColorMap = (data: ProcessedTimelineData[], colors: (string | und
 
     const hslColor = generateColorVariants(baseHexColor, currentGroup);
 
-    if (!hslColor) {
-      return accumulator;
-    }
+    if (!hslColor) return accumulator;
 
     accumulator.set(currentGroup, hslColor);
     return accumulator;

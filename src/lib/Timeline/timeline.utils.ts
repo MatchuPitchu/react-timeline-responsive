@@ -33,11 +33,16 @@ export const generateArray = <T>(length: number, cb: (value: unknown, index: num
 
 export const getSortedData = (data: TimelineData[]) => data.sort((a, b) => a.startPeriod.localeCompare(b.startPeriod));
 
-export const hexToHsl = (hex: string): HexToHslReturn => {
+export const hexToHsl = (hex: `#${string}`): HexToHslReturn => {
+  // Expand 3-digit hex color codes to 6 digits
+  const normalizedHex = hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (_, r, g, b) => {
+    return r + r + g + g + b + b;
+  });
+
   // Convert hex to RGB
-  const r = parseInt(hex.slice(1, 3), 16) / 255;
-  const g = parseInt(hex.slice(3, 5), 16) / 255;
-  const b = parseInt(hex.slice(5, 7), 16) / 255;
+  const r = parseInt(normalizedHex.slice(1, 3), 16) / 255;
+  const g = parseInt(normalizedHex.slice(3, 5), 16) / 255;
+  const b = parseInt(normalizedHex.slice(5, 7), 16) / 255;
 
   // Find min and max values of RGB
   const cmin = Math.min(r, g, b);
@@ -75,6 +80,6 @@ export const hexToHsl = (hex: string): HexToHslReturn => {
     hsl: `hsl(${h}, ${s}%, ${l}%)`,
     hue: `${h}`,
     saturation: `${s}%`,
-    lightness: `${l}%`,
+    lightness: `${l}%`
   };
 };

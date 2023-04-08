@@ -8,8 +8,8 @@ export type Theme = {
 };
 
 export type TimelineData = {
-  startPeriod: string;
-  endPeriod: string;
+  startPeriod: string; // 'yyyy-mm'
+  endPeriod: string; // 'yyyy-mm'
   title: string;
   organization?: string;
   content?: string[];
@@ -37,6 +37,8 @@ export type HexToHslReturn = {
   saturation: string;
   lightness: string;
 };
+
+export type AccentColors = [`#${string}`, `#${string}` | undefined];
 
 export type LocalesArgument =
   | 'af-NA'
