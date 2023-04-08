@@ -1,4 +1,4 @@
-import { Timeline } from './lib';
+import { Timeline } from 'react-timeline-responsive';
 import type { Theme, TimelineData } from './lib/index.d';
 import './styles.css';
 
