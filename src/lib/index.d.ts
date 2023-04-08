@@ -11,8 +11,8 @@ export type TimelineData = {
   startPeriod: string;
   endPeriod: string;
   title: string;
-  organization: string;
-  content: string[];
+  organization?: string;
+  content?: string[];
   duration?: number;
   column?: number;
   startRowGrid?: number;

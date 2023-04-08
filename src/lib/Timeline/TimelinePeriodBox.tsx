@@ -8,31 +8,34 @@ interface ITimelinePeriodBox {
 }
 
 export const TimelinePeriodBox = ({ item, isActive, getFormattedDateString, accentColor }: ITimelinePeriodBox) => {
+  const { startPeriod, endPeriod, title, organization, content, startRowGrid, column, endRowGrid } = item;
+
   const boxShadow = isActive
     ? `var(--timeline-box-shadow), inset 1px 2px 0 0 ${accentColor}, inset -1px -2px 0 0 ${accentColor}`
     : `var(--timeline-box-shadow), inset 0 2px 0 0 ${accentColor}, inset 0 -2px 0 0 ${accentColor}`;
 
   return (
     <div
-      key={item.title}
+      key={title}
       className={`timeline-periods-content__period ${isActive ? 'active' : ''}`}
       style={{
-        gridArea: `${item.startRowGrid} / ${item.column} / ${item.endRowGrid}`,
+        gridArea: `${startRowGrid} / ${column} / ${endRowGrid}`,
         boxShadow,
       }}
     >
       <div className='timeline-sticky-content'>
         <div className='timeline-sticky-content__date'>
-          {getFormattedDateString(item.startPeriod)} – {getFormattedDateString(item.endPeriod)}
+          {getFormattedDateString(startPeriod)} – {getFormattedDateString(endPeriod)}
         </div>
-        {item.title && <div className='timeline-sticky-content__title'>{item.title}</div>}
-        {item.organization && <div className='timeline-sticky-content__organization'>{item.organization}</div>}
+        <div className='timeline-sticky-content__title'>{title}</div>
+        {organization && <div className='timeline-sticky-content__organization'>{organization}</div>}
         <p className='timeline-sticky-content__text'>
-          {item.content.map((contentItem, index) => (
-            <span key={index} className='timeline-sticky-content__text-item'>
-              {contentItem}
-            </span>
-          ))}
+          {content &&
+            content.map((text, index) => (
+              <span key={index} className='timeline-sticky-content__text-item'>
+                {text}
+              </span>
+            ))}
         </p>
       </div>
     </div>

@@ -104,18 +104,18 @@ const App = () => {
 | startPeriod  | string   | Yes      | N/A     | The start date of the timeline item in YYYY-MM format.                                            |
 | endPeriod    | string   | Yes      | N/A     | The end date of the timeline item in YYYY-MM format. Use an empty string ('') for active periods. |
 | title        | string   | Yes      | N/A     | The title of the timeline item.                                                                   |
-| organization | string   | Yes      | N/A     | The organization associated with the timeline item.                                               |
-| content      | string[] | Yes      | N/A     | An array of strings representing the text content of the timeline item.                           |
+| organization | string   | No       | N/A     | The organization or a subtitle associated with the timeline item.                                 |
+| content      | string[] | No       | N/A     | An array of strings representing the text content of the timeline item.                           |
 
 ## Theme
 
 `Theme` is an object type that lets you customize the Timeline component
 
-| Prop                 | Type              | Default            | Description                                                                             |
-| :------------------- | :---------------- | :----------------- | :-------------------------------------------------------------------------------------- |
-| colorAccentPrimary   | string (required) | N/A                | The primary color accent of the timeline. Must be in hex format, starting with a `#`.   |
-| colorAccentSecondary | string (optional) | colorAccentPrimary | The secondary color accent of the timeline. Must be in hex format, starting with a `#`. |
-| colorText            | string (required) | N/A                | The text color of the timeline. Must be in hex format, starting with a `#`.             |
-| colorBackground      | string (required) | N/A                | The background color of some timeline elements.                                         |
-| colorBarHex          | string (required) | N/A                | The color of the timeline bar. Must be in hex format, starting with a `#`.              |
-| colorGradation       | number (optional) | 4                  | The gradation between the automatically generated color variants for the period bars.   |
+| Prop                 | Type   | Required | Default            | Description                                                                             |
+| :------------------- | :----- | :------- | :----------------- | :-------------------------------------------------------------------------------------- |
+| colorAccentPrimary   | string | Yes      | N/A                | The primary color accent of the timeline. Must be in hex format, starting with a `#`.   |
+| colorAccentSecondary | string | No       | colorAccentPrimary | The secondary color accent of the timeline. Must be in hex format, starting with a `#`. |
+| colorText            | string | Yes      | N/A                | The text color of the timeline. Must be in hex format, starting with a `#`.             |
+| colorBackground      | string | Yes      | N/A                | The background color of some timeline elements.                                         |
+| colorBarHex          | string | Yes      | N/A                | The color of the timeline bar. Must be in hex format, starting with a `#`.              |
+| colorGradation       | number | No       | 4                  | The gradation between the automatically generated color variants for the period bars.   |
