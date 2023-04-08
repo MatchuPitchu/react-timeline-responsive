@@ -2,7 +2,7 @@
 
 - style injection of `styles.css` with JavaScript: `vite-plugin-css-injected-by-js` <https://www.npmjs.com/package/vite-plugin-css-injected-by-js?activeTab=readme>
 - build package: `npm run build:package`
-- only dist folder is published: `npm publish`
+- only dist folder is published (-> `files` in `package.json`): `npm publish`
 
 ## Articles about Publishing React Components
 
