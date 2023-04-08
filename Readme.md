@@ -31,13 +31,15 @@ The Timeline component is type safe and was designed in `TypeScript`.
 
 ## Installation
 
-You can install this component via npm: `npm i react-timeline-responsive`
+- install this component via npm: `npm i react-timeline-responsive`
 
 ## Usage
 
 To use the component, import it into your project and render it with the necessary props.
 
 ```tsx
+import { Timeline } from 'react-timeline-responsive';
+
 const timelineData = [
   {
     startPeriod: '2010-05',
