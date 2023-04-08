@@ -6,7 +6,7 @@
   </a>
   <img src="https://img.shields.io/badge/language-typescript-blue.svg?style=flat-square"/>
   <a href="https://github.com/MatchuPitchu/react-timeline-responsive/blob/main/LICENSE" target="_blank">
-    <img src="https://img.shields.io/github/license/MatchuPitchu/react-timeline-responsive?style=flat-square"/>
+    <img src="https://img.shields.io/github/license/MatchuPitchu/react-timeline-responsive?color=%23cacaca&style=flat-square"/>
   </a>
   <img src="https://img.shields.io/bundlephobia/minzip/react-timeline-responsive?color=f7cc4b&style=flat-square"/>
   <img src="https://img.shields.io/github/last-commit/MatchuPitchu/react-timeline-responsive?style=flat-square"/>
