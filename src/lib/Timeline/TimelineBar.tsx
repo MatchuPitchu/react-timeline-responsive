@@ -1,7 +1,7 @@
-import type { TimelineData } from '../index.d';
+import type { ProcessedTimelineData } from '../index.d';
 
 interface ITimelineBar {
-  item: Required<TimelineData>;
+  item: ProcessedTimelineData;
   index: number;
   isActive: boolean;
   onBarUpdate: (index?: number) => void;

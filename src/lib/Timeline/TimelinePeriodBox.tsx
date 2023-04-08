@@ -1,7 +1,7 @@
-import type { TimelineData } from '../index.d';
+import type { ProcessedTimelineData } from '../index.d';
 
 interface ITimelinePeriodBox {
-  item: Required<TimelineData>;
+  item: ProcessedTimelineData;
   isActive: boolean;
   getFormattedDateString: (value: string) => string;
   accentColor: string | undefined;

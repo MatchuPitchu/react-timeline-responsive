@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { TimelineBar } from './TimelineBar';
 import { TimelinePeriodBox } from './TimelinePeriodBox';
-import type { TimelineData, Groups } from '../index.d';
+import type { Groups, ProcessedTimelineData } from '../index.d';
 
 interface ITimelineContent {
   timeline: { year: number; month: string }[];
-  transformedData: Required<TimelineData>[];
+  transformedData: ProcessedTimelineData[];
   getFormattedDateString: (value: string) => string;
   colorMap: Map<Groups, string>;
 }

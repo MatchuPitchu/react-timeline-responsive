@@ -45,6 +45,7 @@
     "build:package": "npm run clean && npm run build"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/eslint": "^8.37.0",
     "@types/node": "^18.15.11",

@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { generateArray, getSortedData, getTimelineBorders } from '../Timeline/timeline.utils';
-import type { Direction, LocalesArgument, TimelineData } from '../index.d';
+import type { Direction, LocalesArgument, ProcessedTimelineData, TimelineData } from '../index.d';
 
 export const useTimeline = (timelineData: TimelineData[], language: LocalesArgument, direction: Direction) => {
   const sortedData = getSortedData(timelineData);
@@ -51,7 +51,7 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
 
   const processedData = useMemo(
     () =>
-      sortedData.reduce((accumulator: Required<TimelineData>[], currentItem: TimelineData) => {
+      sortedData.reduce((accumulator: ProcessedTimelineData[], currentItem: TimelineData) => {
         const { startPeriod, endPeriod } = currentItem;
 
         const startMonthIndex = getNumberMonthsFromStart(startPeriod);
@@ -78,7 +78,7 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
         const startRowGrid = direction === 'desc' ? timeline.length - startMonthIndex + 1 : startMonthIndex + 1;
         const endRowGrid = direction === 'desc' ? timeline.length - endMonthIndex : endMonthIndex + 2;
 
-        const item: Required<TimelineData> = {
+        const item: ProcessedTimelineData = {
           ...currentItem,
           column,
           duration,

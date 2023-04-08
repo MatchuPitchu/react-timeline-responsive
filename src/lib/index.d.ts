@@ -20,6 +20,13 @@ export type TimelineData = {
   group?: 1 | 2 | 3 | 4;
 };
 
+type RequiredProperties<T, K extends keyof T> = T & {
+  [Property in K]-?: T[Property];
+};
+
+type TimelineRequiredProperties = 'column' | 'duration' | 'startRowGrid' | 'endRowGrid' | 'group';
+export type ProcessedTimelineData = RequiredProperties<TimelineData, TimelineRequiredProperties>;
+
 export type Groups = NonNullable<TimelineData['group']>;
 
 export type Direction = 'asc' | 'desc';

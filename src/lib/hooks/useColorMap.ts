@@ -1,5 +1,5 @@
 import { hexToHsl, notNullOrUndefined } from '../Timeline/timeline.utils';
-import type { TimelineData, Groups } from '../index.d';
+import type { Groups, ProcessedTimelineData } from '../index.d';
 
 const generateColorVariants = (hex: string, number: number): `hsl(${string}` | undefined => {
   const baseHSLColor = hexToHsl(hex);
@@ -17,7 +17,7 @@ const generateColorVariants = (hex: string, number: number): `hsl(${string}` | u
   return `hsl(${variantHue}, ${variantSat}%, ${variantLight}%)`;
 };
 
-export const useColorMap = (data: Required<TimelineData>[], colors: (string | undefined)[]) => {
+export const useColorMap = (data: ProcessedTimelineData[], colors: (string | undefined)[]) => {
   // reverse() for right color order (primary, secondary -> look at remainder below)
   const cleanedColors = colors.filter(notNullOrUndefined).reverse();
 
