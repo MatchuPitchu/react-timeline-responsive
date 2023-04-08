@@ -41,7 +41,7 @@ To use the component, import it into your project and render it with the necessa
 const timelineData = [
   {
     startPeriod: '2010-05',
-    endPeriod: '20018-10',
+    endPeriod: '2018-10',
     title: 'Title of event/period 1',
     organization: 'Organization 1',
     content: ['Content 1 line 1', 'Content 1 line 2'],
