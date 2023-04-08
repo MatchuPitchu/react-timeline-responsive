@@ -1,5 +1,18 @@
 # React Timeline Component
 
+<p style="text-align: center">
+  <a href="https://www.npmjs.com/package/react-timeline-responsive" target="_blank" >
+    <img src="https://img.shields.io/npm/v/react-timeline-responsive?color=d3a418&label=version&style=flat-square" alt="npm version" />
+  </a>
+  <img src="https://img.shields.io/badge/language-typescript-blue.svg?style=flat-square"/>
+  <a href="https://github.com/MatchuPitchu/react-timeline-responsive/blob/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/github/license/MatchuPitchu/react-timeline-responsive?style=flat-square"/>
+  </a>
+  <img src="https://img.shields.io/bundlephobia/minzip/react-timeline-responsive?color=f7cc4b&style=flat-square"/>
+  <img src="https://img.shields.io/github/last-commit/MatchuPitchu/react-timeline-responsive?style=flat-square"/>
+  <img src="https://img.shields.io/npm/dw/react-timeline-responsive?color=7b69ce&label=npm%20downloads&style=flat-square"/>
+</p>
+
 React Timeline Component is a customizable timeline component for React applications. You can use it to display a timeline of events or any other chronological data.
 
 Just provide your timeline data and your desired theme, and the `Timeline` component will take care of everything for you: the `positioning`, a `fancy sticky grid layout` that is `responsive`.
