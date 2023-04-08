@@ -1,8 +1,12 @@
+/// <reference types="vitest" />
+
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import dts from 'vite-plugin-dts';
+// adds tsc --watch into vite dev server
+import { tscPlugin } from 'vite-plugin-tsc-watch';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,6 +16,7 @@ export default defineConfig({
     dts({
       include: ['src/lib/'],
     }),
+    tscPlugin(),
   ],
   server: {
     open: true, // automatically open app in browser on server start
@@ -32,5 +37,10 @@ export default defineConfig({
         },
       },
     },
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: 'src/tests/setupTests.ts',
   },
 });
