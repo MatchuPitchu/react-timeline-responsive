@@ -42,7 +42,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "clean": "rm -rf dist",
-    "build:package": "npm run clean && npm run build"
+    "build:package": "npm run clean && npm run test:coverage && npm run build"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

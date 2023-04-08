@@ -18,7 +18,7 @@ The Timeline component is type safe and was designed in `TypeScript`.
 
 ## Installation
 
-You can install this component via npm: `npm install react-timeline-responsive`
+You can install this component via npm: `npm i react-timeline-responsive`
 
 ## Usage
 
@@ -32,7 +32,7 @@ const timelineData = [
     title: 'Title of event/period 1',
     organization: 'Organization 1',
     content: ['Content 1 line 1', 'Content 1 line 2'],
-    group: 1,
+    group: 1
   },
   {
     startPeriod: '2015-03',
@@ -40,7 +40,7 @@ const timelineData = [
     title: 'Title of event/period 2',
     organization: 'Organization 2',
     content: ['Content 2 line 1', 'Content 2 line 2', 'Content 2 line 3'],
-    group: 1,
+    group: 1
   },
   {
     startPeriod: '2022-01',
@@ -48,8 +48,8 @@ const timelineData = [
     title: 'Title of event/period 3',
     organization: 'Organization 3',
     content: ['Content 3 line 1'],
-    group: 2,
-  },
+    group: 2
+  }
   // Add more events/periods here...
 ];
 
@@ -62,7 +62,7 @@ const theme: Theme = {
   colorText: '#e1e1e1',
   colorBackground: '#242528',
   colorBarHex: '#f7cc4b',
-  colorGradation: 4,
+  colorGradation: 4
 };
 
 const App = () => {
