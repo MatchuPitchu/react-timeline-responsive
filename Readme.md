@@ -4,12 +4,13 @@
   <a href="https://www.npmjs.com/package/react-timeline-responsive" target="_blank" >
     <img src="https://img.shields.io/npm/v/react-timeline-responsive?color=d3a418&label=version&style=flat-square" alt="npm version" />
   </a>
+  <img src="https://img.shields.io/codecov/c/gh/MatchuPitchu/react-timeline-responsive?color=006A50&style=flat-square"/>
   <img src="https://img.shields.io/badge/language-typescript-blue.svg?style=flat-square"/>
   <a href="https://github.com/MatchuPitchu/react-timeline-responsive/blob/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/github/license/MatchuPitchu/react-timeline-responsive?color=%23cacaca&style=flat-square"/>
   </a>
   <img src="https://img.shields.io/bundlephobia/minzip/react-timeline-responsive?color=f7cc4b&style=flat-square"/>
-  <img src="https://img.shields.io/github/last-commit/MatchuPitchu/react-timeline-responsive?style=flat-square"/>
+  <img src="https://img.shields.io/github/last-commit/MatchuPitchu/react-timeline-responsive?color=%23073763&style=flat-square"/>
   <img src="https://img.shields.io/npm/dw/react-timeline-responsive?color=7b69ce&label=npm%20downloads&style=flat-square"/>
 </p>
 
