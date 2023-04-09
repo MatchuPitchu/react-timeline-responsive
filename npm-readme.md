@@ -12,3 +12,4 @@
 - React Component Library with Vite and Deploy in NPM: <https://articles.wesionary.team/react-component-library-with-vite-and-deploy-in-npm-579c2880d6ff>
 - Creating a TypeScript Package with Vite: <https://onderonur.netlify.app/blog/creating-a-typescript-library-with-vite>
 - Publishing a React component to npm using Vite: <https://tomsouthall.com/blog/publishing-react-component-using-vite>
+- Codecov Code Coverage Reporting: <https://about.codecov.io/blog/measuring-typescript-code-coverage-with-jest-and-github-actions/>
