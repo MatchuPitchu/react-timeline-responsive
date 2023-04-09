@@ -14,33 +14,33 @@ export default defineConfig({
     react(),
     cssInjectedByJsPlugin(),
     dts({
-      include: ['src/lib/'],
+      include: ['src/lib/']
     }),
-    tscPlugin(),
+    tscPlugin()
   ],
   server: {
     open: true, // automatically open app in browser on server start
-    port: 4000, // change port number
+    port: 4000 // change port number
   },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/lib/index.ts'),
       name: 'React Timeline Responsive',
       formats: ['es', 'umd'],
-      fileName: (format) => `react-timeline-responsive.${format}.js`,
+      fileName: (format) => `react-timeline-responsive.${format}.js`
     },
     rollupOptions: {
       external: ['react'],
       output: {
         globals: {
-          react: 'React',
-        },
-      },
-    },
+          react: 'React'
+        }
+      }
+    }
   },
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: 'src/tests/setupTests.ts',
-  },
+    setupFiles: 'src/tests/setupTests.ts'
+  }
 });
