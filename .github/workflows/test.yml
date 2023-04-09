@@ -1,7 +1,8 @@
 name: Create test coverage report
 on:
   push:
-    branches: -main
+    branches:
+      - main
   # notice: colon is mandatory, even if no more details defined below
   workflow_dispatch:
 jobs:
