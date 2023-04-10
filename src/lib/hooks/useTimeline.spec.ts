@@ -4,7 +4,7 @@ import { useTimeline } from './useTimeline';
 describe('useTimeline', () => {
   const language = 'en-US';
 
-  it('should return timeline in ascending order when direction is "asc"', () => {
+  it('should return timeline in ascending order when "asc" is set', () => {
     const timelineData = [
       {
         startPeriod: '2023-01',
@@ -38,7 +38,7 @@ describe('useTimeline', () => {
     expect(result.current.timeline).toEqual(expectedTimeline);
   });
 
-  it('should return timeline in descending order when direction is "desc"', () => {
+  it('should return timeline in descending order when "desc" is set', () => {
     const timelineData = [
       {
         startPeriod: '2023-01',
@@ -161,7 +161,58 @@ describe('useTimeline', () => {
     expect(result.current.processedData).toEqual(expectedProcessedData);
   });
 
-  it('should return years based on the timeline data in ascending order when direction is "asc"', () => {
+  it('should calculate 3 different columns if timeline data has items with an overlapping startPeriod and endPeriod', () => {
+    const timelineData = [
+      {
+        startPeriod: '2022-02',
+        endPeriod: '2022-06',
+        title: 'Timeline Item 1'
+      },
+      {
+        startPeriod: '2022-03',
+        endPeriod: '2022-07',
+        title: 'Timeline Item 2'
+      },
+      {
+        startPeriod: '2022-04',
+        endPeriod: '2022-08',
+        title: 'Timeline Item 3'
+      }
+    ];
+
+    const { result } = renderHook(() => useTimeline(timelineData, language, 'asc'));
+
+    const expectedProcessedData = [
+      {
+        ...timelineData[0],
+        duration: 5,
+        column: 1,
+        startRowGrid: 2,
+        endRowGrid: 7,
+        group: 1
+      },
+      {
+        ...timelineData[1],
+        duration: 5,
+        column: 2,
+        startRowGrid: 3,
+        endRowGrid: 8,
+        group: 1
+      },
+      {
+        ...timelineData[2],
+        duration: 5,
+        column: 3,
+        startRowGrid: 4,
+        endRowGrid: 9,
+        group: 1
+      }
+    ];
+
+    expect(result.current.processedData).toEqual(expectedProcessedData);
+  });
+
+  it('should return years based on the timeline data in ascending order when "asc" is set', () => {
     const timelineData = [
       {
         startPeriod: '2020-01',
@@ -180,7 +231,7 @@ describe('useTimeline', () => {
     expect(result.current.years).toEqual([2020, 2021, 2022, 2023]);
   });
 
-  it('should return years based on the timeline data in descending order when direction is "desc"', () => {
+  it('should return years based on the timeline data in descending order when "desc" is set', () => {
     const timelineData = [
       {
         startPeriod: '2020-01',

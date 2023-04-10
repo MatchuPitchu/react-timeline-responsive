@@ -8,7 +8,7 @@ interface ITimelinePeriodBox {
 }
 
 export const TimelinePeriodBox = ({ item, isActive, getFormattedDateString, accentColor }: ITimelinePeriodBox) => {
-  const { startPeriod, endPeriod, title, organization, content, startRowGrid, column, endRowGrid } = item;
+  const { startPeriod, endPeriod, title, subtitle, content, startRowGrid, column, endRowGrid } = item;
 
   const boxShadow = isActive
     ? `var(--timeline-box-shadow), inset 1px 2px 0 0 ${accentColor}, inset -1px -2px 0 0 ${accentColor}`
@@ -20,19 +20,19 @@ export const TimelinePeriodBox = ({ item, isActive, getFormattedDateString, acce
       className={`timeline-periods-content__period ${isActive ? 'active' : ''}`}
       style={{
         gridArea: `${startRowGrid} / ${column} / ${endRowGrid}`,
-        boxShadow,
+        boxShadow
       }}
     >
-      <div className='timeline-sticky-content'>
-        <div className='timeline-sticky-content__date'>
+      <div className="timeline-sticky-content">
+        <div className="timeline-sticky-content__date">
           {getFormattedDateString(startPeriod)} – {getFormattedDateString(endPeriod)}
         </div>
-        <div className='timeline-sticky-content__title'>{title}</div>
-        {organization && <div className='timeline-sticky-content__organization'>{organization}</div>}
-        <p className='timeline-sticky-content__text'>
+        <div className="timeline-sticky-content__title">{title}</div>
+        {subtitle && <div className="timeline-sticky-content__subtitle">{subtitle}</div>}
+        <p className="timeline-sticky-content__text">
           {content &&
             content.map((text, index) => (
-              <span key={index} className='timeline-sticky-content__text-item'>
+              <span key={index} className="timeline-sticky-content__text-item">
                 {text}
               </span>
             ))}

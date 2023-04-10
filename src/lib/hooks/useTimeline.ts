@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from 'react';
 import { generateArray, getSortedData, getTimelineBorders } from '../Timeline/timeline.utils';
-import type { Direction, LocalesArgument, ProcessedTimelineData, TimelineData } from '../index.d';
+import type { Order, LocalesArgument, ProcessedTimelineData, TimelineData } from '../index.d';
 
-export const useTimeline = (timelineData: TimelineData[], language: LocalesArgument, direction: Direction) => {
+export const useTimeline = (timelineData: TimelineData[], language: LocalesArgument, order: Order) => {
   const sortedData = getSortedData(timelineData);
 
   const { minYear, maxYear } = getTimelineBorders(timelineData);
@@ -14,23 +14,23 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
   const months = useMemo(
     () =>
       generateArray(12, (_, index) => {
-        const monthIndex = direction === 'desc' ? 11 - index : index;
+        const monthIndex = order === 'desc' ? 11 - index : index;
         return new Date(2000, monthIndex).toLocaleString('default', {
-          month: '2-digit',
+          month: '2-digit'
         });
       }),
-    [direction]
+    [order]
   );
 
   const years = useMemo(
     () =>
       generateArray(numberYearsInTimeline, (_, index) => {
-        if (direction === 'desc') {
+        if (order === 'desc') {
           return startDateTimeline.getFullYear() + numberYearsInTimeline - 1 - index;
         }
         return startDateTimeline.getFullYear() + index;
       }),
-    [direction, numberYearsInTimeline, startDateTimeline]
+    [order, numberYearsInTimeline, startDateTimeline]
   );
 
   const timeline = useMemo(() => years.flatMap((year) => months.map((month) => ({ year, month }))), [months, years]);
@@ -75,8 +75,8 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
 
         occupiedColumns.splice(startMonthIndex, duration, ...updatedOccupiedColumns);
 
-        const startRowGrid = direction === 'desc' ? timeline.length - startMonthIndex + 1 : startMonthIndex + 1;
-        const endRowGrid = direction === 'desc' ? timeline.length - endMonthIndex : endMonthIndex + 2;
+        const startRowGrid = order === 'desc' ? timeline.length - startMonthIndex + 1 : startMonthIndex + 1;
+        const endRowGrid = order === 'desc' ? timeline.length - endMonthIndex : endMonthIndex + 2;
 
         const item: ProcessedTimelineData = {
           ...currentItem,
@@ -84,12 +84,12 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
           duration,
           startRowGrid,
           endRowGrid,
-          group: currentItem.group ?? 1,
+          group: currentItem.group ?? 1
         };
 
         return [...accumulator, item];
       }, []),
-    [sortedData, direction, occupiedColumns, getNumberMonthsFromStart, timeline.length]
+    [sortedData, order, occupiedColumns, getNumberMonthsFromStart, timeline.length]
   );
 
   const getFormattedDateString = useCallback(
@@ -107,6 +107,6 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
     timeline,
     processedData,
     years,
-    getFormattedDateString,
+    getFormattedDateString
   };
 };

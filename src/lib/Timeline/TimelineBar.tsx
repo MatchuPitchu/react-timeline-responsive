@@ -13,10 +13,10 @@ export const TimelineBar = ({ item, index, isActive, onBarUpdate, accentColor }:
 
   return (
     <div
-      className='timeline-periods__bar'
+      className="timeline-periods__bar"
       style={{
         gridArea: `${item.startRowGrid} / ${item.column} / ${item.endRowGrid}`,
-        backgroundColor,
+        backgroundColor
       }}
       onMouseEnter={(_) => onBarUpdate(index)}
       onMouseLeave={(_) => onBarUpdate()}

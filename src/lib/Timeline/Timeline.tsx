@@ -4,13 +4,13 @@ import { useTimeline } from '../hooks/useTimeline';
 import { TimelineContent } from './TimelineContent';
 import { TimelineLayout } from './TimelineLayout';
 import { hexToHsl, setCSSVariable } from './timeline.utils';
-import type { Direction, LocalesArgument, Theme, TimelineData } from '../index.d';
+import type { Order, LocalesArgument, Theme, TimelineData } from '../index.d';
 import './styles.css';
 
 interface ITimeline {
   timelineData: TimelineData[];
   language: LocalesArgument;
-  direction: Direction;
+  order: Order;
   theme: Theme;
   stickyMarginTopDesktop?: number;
   stickyMarginTopMobile?: number;
@@ -19,12 +19,12 @@ interface ITimeline {
 const TimelinePure = ({
   timelineData,
   language,
-  direction,
+  order,
   theme: { colorAccentPrimary, colorAccentSecondary, colorText, colorBackground, colorBarHex, colorGradation = 4 },
   stickyMarginTopDesktop = 60,
-  stickyMarginTopMobile = 15,
+  stickyMarginTopMobile = 15
 }: ITimeline) => {
-  const { timeline, processedData, years, getFormattedDateString } = useTimeline(timelineData, language, direction);
+  const { timeline, processedData, years, getFormattedDateString } = useTimeline(timelineData, language, order);
   const colorMap = useColorMap(processedData, [colorAccentPrimary, colorAccentSecondary]);
 
   useEffect(() => {
