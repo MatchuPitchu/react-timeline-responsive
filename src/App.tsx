@@ -1,4 +1,4 @@
-import { Timeline } from 'react-timeline-responsive';
+import { Timeline } from './lib';
 import type { Theme, TimelineData } from './lib/index.d';
 import './styles.css';
 
@@ -7,7 +7,7 @@ const timelineData: TimelineData[] = [
     startPeriod: '2021-02',
     endPeriod: '2022-09',
     title: 'Emoji Integration Specialist',
-    organization: 'Emojify Inc.',
+    subtitle: 'Emojify Inc.',
     content: ['Created custom emoji sets for high-profile clients including celebrities and politicians'],
     group: 1
   },
@@ -15,7 +15,7 @@ const timelineData: TimelineData[] = [
     startPeriod: '2013-06',
     endPeriod: '2019-12',
     title: 'Data Wizard',
-    organization: 'Infinite Insights LLC',
+    subtitle: 'Infinite Insights LLC',
     content: [
       'Developed complex algorithms to analyze and interpret large datasets',
       'Implemented data visualization techniques to communicate insights to stakeholders',
@@ -27,7 +27,7 @@ const timelineData: TimelineData[] = [
     startPeriod: '2010-05',
     endPeriod: '2014-08',
     title: 'Ninja Developer',
-    organization: 'Stealthy Software Solutions',
+    subtitle: 'Stealthy Software Solutions',
     content: [
       'Developed web applications with stealth and precision',
       'Performed code refactoring and optimization with lightning-fast speed',
@@ -39,7 +39,7 @@ const timelineData: TimelineData[] = [
     startPeriod: '2016-08',
     endPeriod: '2019-03',
     title: 'Stand-Up Comedian',
-    organization: 'The Chuckle Hut',
+    subtitle: 'The Chuckle Hut',
     content: ['Writing and performing original comedy material'],
     group: 2
   },
@@ -47,7 +47,7 @@ const timelineData: TimelineData[] = [
     startPeriod: '2010-01',
     endPeriod: '2012-05',
     title: 'Comedy Writer',
-    organization: 'Late Night with Conan',
+    subtitle: 'Late Night with Conan',
     content: ['Writing monologue jokes, sketches, and other comedy segments'],
     group: 2
   },
@@ -55,7 +55,7 @@ const timelineData: TimelineData[] = [
     startPeriod: '2017-10',
     endPeriod: '',
     title: 'Space Explorer',
-    organization: 'Interstellar Adventures Inc.',
+    subtitle: 'Interstellar Adventures Inc.',
     content: [
       'Piloted a spacecraft to explore deep space and conduct scientific research',
       'Developed protocols and procedures to ensure the safety of the crew and equipment',
@@ -67,7 +67,7 @@ const timelineData: TimelineData[] = [
     startPeriod: '2020-02',
     endPeriod: '2020-11',
     title: 'Cybersecurity Guru',
-    organization: 'Secure Systems Inc.',
+    subtitle: 'Secure Systems Inc.',
     content: [
       'Developed and implemented security protocols to protect against cyber attacks',
       'Conducted security assessments and risk analyses to identify vulnerabilities',
@@ -87,5 +87,5 @@ const theme: Theme = {
 };
 
 export const App = () => {
-  return <Timeline timelineData={timelineData} language="de-DE" direction="asc" theme={theme} />;
+  return <Timeline timelineData={timelineData} language="de-DE" order="asc" theme={theme} />;
 };

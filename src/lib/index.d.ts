@@ -11,7 +11,7 @@ export type TimelineData = {
   startPeriod: string; // 'yyyy-mm'
   endPeriod: string; // 'yyyy-mm'
   title: string;
-  organization?: string;
+  subtitle?: string;
   content?: string[];
   duration?: number;
   column?: number;
@@ -29,7 +29,7 @@ export type ProcessedTimelineData = RequiredProperties<TimelineData, TimelineReq
 
 export type Groups = NonNullable<TimelineData['group']>;
 
-export type Direction = 'asc' | 'desc';
+export type Order = 'asc' | 'desc';
 
 export type HexToHslReturn = {
   hsl: `hsl(${string}`;

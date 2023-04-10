@@ -46,7 +46,7 @@ const timelineData = [
     startPeriod: '2010-05',
     endPeriod: '2018-10',
     title: 'Title of event/period 1',
-    organization: 'Organization 1',
+    subtitle: 'Subtitle 1',
     content: ['Content 1 line 1', 'Content 1 line 2'],
     group: 1
   },
@@ -54,7 +54,7 @@ const timelineData = [
     startPeriod: '2015-03',
     endPeriod: '2021-11',
     title: 'Title of event/period 2',
-    organization: 'Organization 2',
+    subtitle: 'Subtitle 2',
     content: ['Content 2 line 1', 'Content 2 line 2', 'Content 2 line 3'],
     group: 1
   },
@@ -62,7 +62,7 @@ const timelineData = [
     startPeriod: '2022-01',
     endPeriod: '',
     title: 'Title of event/period 3',
-    organization: 'Organization 3',
+    subtitle: 'Subtitle 3',
     content: ['Content 3 line 1'],
     group: 2
   }
@@ -70,7 +70,7 @@ const timelineData = [
 ];
 
 const language = 'en-US'; // date language format (e.g. 'de-DE')
-const direction = 'asc'; // in which direction timeline goes ('asc' | 'desc')
+const order = 'asc'; // in which order timeline goes ('asc' | 'desc')
 
 const theme: Theme = {
   colorAccentPrimary: '#d3a418',
@@ -82,7 +82,7 @@ const theme: Theme = {
 };
 
 const App = () => {
-  return <Timeline timelineData={timelineData} language={language} direction={direction} theme={theme} />;
+  return <Timeline timelineData={timelineData} language={language} order={order} theme={theme} />;
 };
 ```
 
@@ -90,8 +90,8 @@ const App = () => {
 
 - The timeline starts automatically in the year of the earliest period and ends in the year of the latest period.
 - If a period is still active and doesn't have an end date, use an empty string for the `endDate` property in the timeline data.
-- The language prop is used to define the format of the date strings displayed in the period text box. For example, you can set it to `de-DE` for German language formatting.
-- The direction prop defines in which direction the timeline should go. You can set it to either `asc` for ascending (i.e., from past to present) or `desc` for descending (i.e., from present to past).
+- The `language` prop is used to define the format of the date strings displayed in the period text box. For example, you can set it to `de-DE` for German language formatting.
+- The `order` prop defines in which order the timeline should go. You can set it to either `asc` for ascending (i.e., from past to present) or `desc` for descending (i.e., from present to past).
 - The component provides several color theming props to allow for customization of the visual appearance. Make sure to provide the required colors in the proper format (e.g., as hexadecimal values if needed in the type definition). You can use the `theme` object e.g. to switch between dark and light mode.
 
 ### Usage Advices
@@ -106,7 +106,7 @@ const App = () => {
 | :--------------------- | :-------------- | :------- | :-------- | :------------------------------------------------------------------------------- |
 | timelineData           | TimelineData[]  | Yes      | N/A       | An array of timeline data to display. See below for the details of TimelineData. |
 | language               | LocalesArgument | Yes      | N/A       | The locale for the date format of the timeline (e.g. `en-US`, `de-DE`).          |
-| direction              | 'asc' or 'desc' | Yes      | N/A       | The direction in which the timeline should be displayed.                         |
+| order                  | 'asc' or 'desc' | Yes      | N/A       | The order in which the timeline should be displayed.                             |
 | theme                  | Theme           | Yes      | See below | The color theme for the timeline. See below for the details of Theme.            |
 | stickyMarginTopDesktop | number          | No       | 60        | The margin top value in pixels for the sticky effect on desktop devices.         |
 | stickyMarginTopMobile  | number          | No       | 15        | The margin top value in pixels for the sticky effect on mobile devices.          |
@@ -115,13 +115,13 @@ const App = () => {
 
 `TimelineData` is an object type that represents a single item on the timeline.
 
-| Name         | Type     | Required | Default | Description                                                                                       |
-| :----------- | :------- | :------- | :------ | :------------------------------------------------------------------------------------------------ |
-| startPeriod  | string   | Yes      | N/A     | The start date of the timeline item in YYYY-MM format.                                            |
-| endPeriod    | string   | Yes      | N/A     | The end date of the timeline item in YYYY-MM format. Use an empty string ('') for active periods. |
-| title        | string   | Yes      | N/A     | The title of the timeline item.                                                                   |
-| organization | string   | No       | N/A     | The organization or a subtitle associated with the timeline item.                                 |
-| content      | string[] | No       | N/A     | An array of strings representing the text content of the timeline item.                           |
+| Name        | Type     | Required | Default | Description                                                                                       |
+| :---------- | :------- | :------- | :------ | :------------------------------------------------------------------------------------------------ |
+| startPeriod | string   | Yes      | N/A     | The start date of the timeline item in YYYY-MM format.                                            |
+| endPeriod   | string   | Yes      | N/A     | The end date of the timeline item in YYYY-MM format. Use an empty string ('') for active periods. |
+| title       | string   | Yes      | N/A     | The title of the timeline item.                                                                   |
+| subtitle    | string   | No       | N/A     | The subtitle (e.g. an organization) associated with the timeline item.                            |
+| content     | string[] | No       | N/A     | An array of strings representing the text content of the timeline item.                           |
 
 ## Theme
 

@@ -4,7 +4,7 @@ import { useTimeline } from './useTimeline';
 describe('useTimeline', () => {
   const language = 'en-US';
 
-  it('should return timeline in ascending order when direction is "asc"', () => {
+  it('should return timeline in ascending order when "asc" is set', () => {
     const timelineData = [
       {
         startPeriod: '2023-01',
@@ -38,7 +38,7 @@ describe('useTimeline', () => {
     expect(result.current.timeline).toEqual(expectedTimeline);
   });
 
-  it('should return timeline in descending order when direction is "desc"', () => {
+  it('should return timeline in descending order when "desc" is set', () => {
     const timelineData = [
       {
         startPeriod: '2023-01',
@@ -161,7 +161,7 @@ describe('useTimeline', () => {
     expect(result.current.processedData).toEqual(expectedProcessedData);
   });
 
-  it('should return years based on the timeline data in ascending order when direction is "asc"', () => {
+  it('should return years based on the timeline data in ascending order when "asc" is set', () => {
     const timelineData = [
       {
         startPeriod: '2020-01',
@@ -180,7 +180,7 @@ describe('useTimeline', () => {
     expect(result.current.years).toEqual([2020, 2021, 2022, 2023]);
   });
 
-  it('should return years based on the timeline data in descending order when direction is "desc"', () => {
+  it('should return years based on the timeline data in descending order when "desc" is set', () => {
     const timelineData = [
       {
         startPeriod: '2020-01',
