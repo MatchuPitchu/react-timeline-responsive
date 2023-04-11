@@ -41,48 +41,51 @@ To use the component, import it into your project and render it with the necessa
 ```tsx
 import { Timeline } from 'react-timeline-responsive';
 
-const timelineData = [
+const timelineData: TimelineData[] = [
   {
     startPeriod: '2010-05',
     endPeriod: '2018-10',
     title: 'Title of event/period 1',
-    subtitle: 'Subtitle 1',
-    content: ['Content 1 line 1', 'Content 1 line 2'],
+    subtitle: 'Subtitle 1', // optional
+    content: ['Content 1 line 1', 'Content 1 line 2'], // optional
     group: 1
   },
   {
-    startPeriod: '2015-03',
-    endPeriod: '2021-11',
+    startPeriod: '2015-01',
+    endPeriod: '',
     title: 'Title of event/period 2',
     subtitle: 'Subtitle 2',
-    content: ['Content 2 line 1', 'Content 2 line 2', 'Content 2 line 3'],
-    group: 1
-  },
-  {
-    startPeriod: '2022-01',
-    endPeriod: '',
-    title: 'Title of event/period 3',
-    subtitle: 'Subtitle 3',
-    content: ['Content 3 line 1'],
+    content: ['Content 2 line 1'],
     group: 2
   }
   // Add more events/periods here...
 ];
 
-const language = 'en-US'; // date language format (e.g. 'de-DE')
+const language = 'en-US'; // date language format
 const order = 'asc'; // in which order timeline goes ('asc' | 'desc')
+const stickyMarginTopDesktop = 50; // e.g. if sticky navbar is present; default: 60 -> results in 60px
+const stickyMarginTopMobile = 10; // default: 15 -> results in 15px
 
 const theme: Theme = {
   colorAccentPrimary: '#d3a418',
-  colorAccentSecondary: '#ff4f04',
+  colorAccentSecondary: '#ff4f04', // optional: nice if more than 1 group
   colorText: '#e1e1e1',
   colorBackground: '#242528',
   colorBarHex: '#f7cc4b',
-  colorGradation: 4
+  colorGradation: 4 // optional: default is 4
 };
 
-const App = () => {
-  return <Timeline timelineData={timelineData} language={language} order={order} theme={theme} />;
+const MyTimeline = () => {
+  return (
+    <Timeline
+      timelineData={timelineData}
+      language={language}
+      order={order}
+      theme={theme}
+      stickyMarginTopDesktop={stickyMarginTopDesktop}
+      stickyMarginTopMobile={stickyMarginTopMobile}
+    />
+  );
 };
 ```
 
