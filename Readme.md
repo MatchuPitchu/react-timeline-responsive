@@ -138,3 +138,7 @@ const MyTimeline = () => {
 | colorBackground      | string | Yes      | N/A                | The background color of some timeline elements.                                         |
 | colorBarHex          | string | Yes      | N/A                | The color of the timeline bar. Must be in hex format, starting with a `#`.              |
 | colorGradation       | number | No       | 4                  | The gradation between the automatically generated color variants for the period bars.   |
+
+## Website of Package Author
+
+> <https://www.michaelflohr.de/webentwicklung#npm-packages>
