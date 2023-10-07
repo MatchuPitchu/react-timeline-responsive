@@ -20,12 +20,20 @@ const TimelinePure = ({
   timelineData,
   language,
   order,
-  theme: { colorAccentPrimary, colorAccentSecondary, colorText, colorBackground, colorBarHex, colorGradation = 4 },
+  theme: {
+    colorAccentPrimary,
+    colorAccentSecondary,
+    colorAccentTertiary,
+    colorText,
+    colorBackground,
+    colorBarHex,
+    colorGradation = 4
+  },
   stickyMarginTopDesktop = 60,
   stickyMarginTopMobile = 15
 }: ITimeline) => {
   const { timeline, processedData, years, getFormattedDateString } = useTimeline(timelineData, language, order);
-  const colorMap = useColorMap(processedData, [colorAccentPrimary, colorAccentSecondary]);
+  const colorMap = useColorMap(processedData, [colorAccentPrimary, colorAccentSecondary, colorAccentTertiary]);
 
   useEffect(() => {
     setCSSVariable('--timeline-color-accent-primary', colorAccentPrimary);

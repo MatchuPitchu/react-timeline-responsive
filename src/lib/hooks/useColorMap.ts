@@ -18,17 +18,17 @@ const generateColorVariants = (hex: `#${string}`, number: number): `hsl(${string
 };
 
 export const useColorMap = (data: ProcessedTimelineData[], colors: AccentColors) => {
-  // reverse() for right color order (primary, secondary -> look at remainder below)
-  const cleanedColors = colors.filter(notNullOrUndefined).reverse();
+  const cleanedColors = colors.filter(notNullOrUndefined);
 
   const groups: Groups[] = data.map(({ group }) => group);
   const groupsSet = [...new Set(groups)];
 
   const colorMap = groupsSet.reduce((accumulator, currentGroup) => {
-    const remainder = currentGroup % 2; // group 1: 1, group 2: 0, group 3: 1 ...
+    const remainder = currentGroup % 3; // group 1: 2, group 2: 1, group 3: 0 ...
+    const cleanedColorsIndex = remainder === 0 ? 2 : remainder - 1;
 
-    // if no secondary accent color, then take first color
-    const baseHexColor = cleanedColors[remainder] ?? cleanedColors[0];
+    // if no provided accent color, then take first color
+    const baseHexColor = cleanedColors[cleanedColorsIndex] ?? cleanedColors[0];
 
     const hslColor = generateColorVariants(baseHexColor, currentGroup);
 

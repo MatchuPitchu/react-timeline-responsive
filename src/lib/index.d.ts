@@ -1,6 +1,7 @@
 export type Theme = {
   colorAccentPrimary: `#${string}`;
   colorAccentSecondary?: `#${string}`;
+  colorAccentTertiary?: `#${string}`;
   colorText: `#${string}`;
   colorBackground: string;
   colorBarHex: `#${string}`;
@@ -38,7 +39,7 @@ export type HexToHslReturn = {
   lightness: string;
 };
 
-export type AccentColors = [`#${string}`, `#${string}` | undefined];
+export type AccentColors = [Theme['colorAccentPrimary'], Theme['colorAccentSecondary'], Theme['colorAccentTertiary']];
 
 export type LocalesArgument =
   | 'af-NA'

@@ -16,7 +16,6 @@ export const TimelinePeriodBox = ({ item, isActive, getFormattedDateString, acce
 
   return (
     <div
-      key={title}
       className={`timeline-periods-content__period ${isActive ? 'active' : ''}`}
       style={{
         gridArea: `${startRowGrid} / ${column} / ${endRowGrid}`,

@@ -69,6 +69,7 @@ const stickyMarginTopMobile = 10; // default: 15 -> results in 15px
 const theme: Theme = {
   colorAccentPrimary: '#d3a418',
   colorAccentSecondary: '#ff4f04', // optional: nice if more than 1 group
+  colorAccentTertiary: '#3b7022', // optional: nice if more than 2 groups
   colorText: '#e1e1e1',
   colorBackground: '#242528',
   colorBarHex: '#f7cc4b',
@@ -134,6 +135,7 @@ const MyTimeline = () => {
 | :------------------- | :----- | :------- | :----------------- | :-------------------------------------------------------------------------------------- |
 | colorAccentPrimary   | string | Yes      | N/A                | The primary color accent of the timeline. Must be in hex format, starting with a `#`.   |
 | colorAccentSecondary | string | No       | colorAccentPrimary | The secondary color accent of the timeline. Must be in hex format, starting with a `#`. |
+| colorAccentTertiary  | string | No       | colorAccentPrimary | The tertiary color accent of the timeline. Must be in hex format, starting with a `#`.  |
 | colorText            | string | Yes      | N/A                | The text color of the timeline. Must be in hex format, starting with a `#`.             |
 | colorBackground      | string | Yes      | N/A                | The background color of some timeline elements.                                         |
 | colorBarHex          | string | Yes      | N/A                | The color of the timeline bar. Must be in hex format, starting with a `#`.              |

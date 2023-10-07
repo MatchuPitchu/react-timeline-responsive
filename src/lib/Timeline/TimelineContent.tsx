@@ -20,7 +20,7 @@ export const TimelineContent = ({ timeline, transformedData, getFormattedDateStr
       <div className="timeline-periods" style={{ gridTemplateRows: `repeat(${timeline.length}, 1fr)` }}>
         {transformedData.map((item, index) => (
           <TimelineBar
-            key={item.title}
+            key={`${item.title}${item.subtitle}`}
             item={item}
             index={index}
             isActive={activeBarIndex === index}
@@ -32,7 +32,7 @@ export const TimelineContent = ({ timeline, transformedData, getFormattedDateStr
       <div className="timeline-periods-content" style={{ gridTemplateRows: `repeat(${timeline.length}, 1fr)` }}>
         {transformedData.map((item, index) => (
           <TimelinePeriodBox
-            key={item.title}
+            key={`${item.title}${item.subtitle}`}
             item={item}
             isActive={activeBarIndex === index}
             getFormattedDateString={getFormattedDateString}
