@@ -80,6 +80,6 @@ export const hexToHsl = (hex: `#${string}`): HexToHslReturn => {
     hsl: `hsl(${h}, ${s}%, ${l}%)`,
     hue: `${h}`,
     saturation: `${s}%`,
-    lightness: `${l}%`
+    lightness: `${l}%`,
   };
 };

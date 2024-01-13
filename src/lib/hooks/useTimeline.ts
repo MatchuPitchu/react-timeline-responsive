@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
+
 import { generateArray, getSortedData, getTimelineBorders } from '../Timeline/timeline.utils';
-import type { Order, LocalesArgument, ProcessedTimelineData, TimelineData } from '../index.d';
+import type { LocalesArgument, Order, ProcessedTimelineData, TimelineData } from '../index.d';
 
 export const useTimeline = (timelineData: TimelineData[], language: LocalesArgument, order: Order) => {
   const sortedData = getSortedData(timelineData);
@@ -16,10 +17,10 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
       generateArray(12, (_, index) => {
         const monthIndex = order === 'desc' ? 11 - index : index;
         return new Date(2000, monthIndex).toLocaleString('default', {
-          month: '2-digit'
+          month: '2-digit',
         });
       }),
-    [order]
+    [order],
   );
 
   const years = useMemo(
@@ -30,7 +31,7 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
         }
         return startDateTimeline.getFullYear() + index;
       }),
-    [order, numberYearsInTimeline, startDateTimeline]
+    [order, numberYearsInTimeline, startDateTimeline],
   );
 
   const timeline = useMemo(() => years.flatMap((year) => months.map((month) => ({ year, month }))), [months, years]);
@@ -44,7 +45,7 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
 
       return monthDiff + yearDiff * 12;
     },
-    [startDateTimeline]
+    [startDateTimeline],
   );
 
   const occupiedColumns = generateArray<number[]>(timeline.length, () => []);
@@ -84,12 +85,12 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
           duration,
           startRowGrid,
           endRowGrid,
-          group: currentItem.group ?? 1
+          group: currentItem.group ?? 1,
         };
 
         return [...accumulator, item];
       }, []),
-    [sortedData, order, occupiedColumns, getNumberMonthsFromStart, timeline.length]
+    [sortedData, order, occupiedColumns, getNumberMonthsFromStart, timeline.length],
   );
 
   const getFormattedDateString = useCallback(
@@ -100,13 +101,13 @@ export const useTimeline = (timelineData: TimelineData[], language: LocalesArgum
       }
       return text;
     },
-    [language]
+    [language],
   );
 
   return {
     timeline,
     processedData,
     years,
-    getFormattedDateString
+    getFormattedDateString,
   };
 };

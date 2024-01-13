@@ -1,10 +1,12 @@
 import { memo, useEffect } from 'react';
+
 import { useColorMap } from '../hooks/useColorMap';
 import { useTimeline } from '../hooks/useTimeline';
+import type { LocalesArgument, Order, Theme, TimelineData } from '../index.d';
 import { TimelineContent } from './TimelineContent';
 import { TimelineLayout } from './TimelineLayout';
 import { hexToHsl, setCSSVariable } from './timeline.utils';
-import type { Order, LocalesArgument, Theme, TimelineData } from '../index.d';
+
 import './styles.css';
 
 interface ITimeline {
@@ -27,10 +29,10 @@ const TimelinePure = ({
     colorText,
     colorBackground,
     colorBarHex,
-    colorGradation = 4
+    colorGradation = 4,
   },
   stickyMarginTopDesktop = 60,
-  stickyMarginTopMobile = 15
+  stickyMarginTopMobile = 15,
 }: ITimeline) => {
   const { timeline, processedData, years, getFormattedDateString } = useTimeline(timelineData, language, order);
   const colorMap = useColorMap(processedData, [colorAccentPrimary, colorAccentSecondary, colorAccentTertiary]);

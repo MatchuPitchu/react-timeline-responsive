@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react';
-import { useColorMap } from './useColorMap';
+
 import type { AccentColors, ProcessedTimelineData } from '../index.d';
+import { useColorMap } from './useColorMap';
 
 describe('useColorMap', () => {
   it('should return a map with colors for each group in the data if 1 color is passed in', () => {
@@ -15,7 +16,7 @@ describe('useColorMap', () => {
         duration: 12,
         // row grid data is false dummy in this test
         startRowGrid: 1,
-        endRowGrid: 2
+        endRowGrid: 2,
       },
       {
         startPeriod: '2021-02',
@@ -25,8 +26,8 @@ describe('useColorMap', () => {
         column: 2,
         duration: 14,
         startRowGrid: 2,
-        endRowGrid: 3
-      }
+        endRowGrid: 3,
+      },
     ];
 
     const colors: AccentColors = ['#d3a418', undefined, undefined];
@@ -50,7 +51,7 @@ describe('useColorMap', () => {
         duration: 12,
         // row grid data is false dummy in this test
         startRowGrid: 1,
-        endRowGrid: 2
+        endRowGrid: 2,
       },
       {
         startPeriod: '2021-02',
@@ -60,7 +61,7 @@ describe('useColorMap', () => {
         column: 2,
         duration: 14,
         startRowGrid: 2,
-        endRowGrid: 3
+        endRowGrid: 3,
       },
       {
         startPeriod: '2021-02',
@@ -70,8 +71,8 @@ describe('useColorMap', () => {
         column: 2,
         duration: 14,
         startRowGrid: 2,
-        endRowGrid: 3
-      }
+        endRowGrid: 3,
+      },
     ];
 
     const colors: AccentColors = ['#d3a418', '#ff4f04', undefined];
@@ -96,7 +97,7 @@ describe('useColorMap', () => {
         duration: 12,
         // row grid data is false dummy in this test
         startRowGrid: 1,
-        endRowGrid: 2
+        endRowGrid: 2,
       },
       {
         startPeriod: '2021-02',
@@ -106,7 +107,7 @@ describe('useColorMap', () => {
         column: 2,
         duration: 14,
         startRowGrid: 2,
-        endRowGrid: 3
+        endRowGrid: 3,
       },
       {
         startPeriod: '2021-02',
@@ -116,8 +117,8 @@ describe('useColorMap', () => {
         column: 2,
         duration: 14,
         startRowGrid: 2,
-        endRowGrid: 3
-      }
+        endRowGrid: 3,
+      },
     ];
 
     const colors: AccentColors = ['#d3a418', '#ff4f04', '#3b7022'];
@@ -142,7 +143,7 @@ describe('useColorMap', () => {
         duration: 12,
         // row grid data is false dummy in this test
         startRowGrid: 1,
-        endRowGrid: 2
+        endRowGrid: 2,
       },
       {
         startPeriod: '2021-02',
@@ -152,7 +153,7 @@ describe('useColorMap', () => {
         column: 2,
         duration: 14,
         startRowGrid: 2,
-        endRowGrid: 3
+        endRowGrid: 3,
       },
       {
         startPeriod: '2021-02',
@@ -162,7 +163,7 @@ describe('useColorMap', () => {
         column: 2,
         duration: 14,
         startRowGrid: 2,
-        endRowGrid: 3
+        endRowGrid: 3,
       },
       {
         startPeriod: '2021-02',
@@ -172,8 +173,8 @@ describe('useColorMap', () => {
         column: 2,
         duration: 14,
         startRowGrid: 2,
-        endRowGrid: 3
-      }
+        endRowGrid: 3,
+      },
     ];
 
     const colors: AccentColors = ['#d3a418', '#ff4f04', '#3b7022'];

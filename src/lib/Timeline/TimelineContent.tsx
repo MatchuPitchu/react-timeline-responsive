@@ -1,7 +1,8 @@
 import { useState } from 'react';
+
+import type { Groups, ProcessedTimelineData } from '../index.d';
 import { TimelineBar } from './TimelineBar';
 import { TimelinePeriodBox } from './TimelinePeriodBox';
-import type { Groups, ProcessedTimelineData } from '../index.d';
 
 interface ITimelineContent {
   timeline: { year: number; month: string }[];

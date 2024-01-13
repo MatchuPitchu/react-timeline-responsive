@@ -52,20 +52,6 @@
     "dot-notation": "warn",
     "eqeqeq": "error",
     "func-style": ["error", "expression"],
-    "import/order": [
-      "error",
-      {
-        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
-        "pathGroups": [
-          {
-            "pattern": "@/**/**",
-            "group": "parent",
-            "position": "before"
-          }
-        ],
-        "alphabetize": { "order": "asc" }
-      }
-    ],
     "import/no-duplicates": "error",
     "max-depth": ["warn", 3],
     "max-nested-callbacks": ["warn", 3],

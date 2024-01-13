@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+
 import { useTimeline } from './useTimeline';
 
 describe('useTimeline', () => {
@@ -9,13 +10,13 @@ describe('useTimeline', () => {
       {
         startPeriod: '2023-01',
         endPeriod: '2023-03',
-        title: 'Project A'
+        title: 'Project A',
       },
       {
         startPeriod: '2023-02',
         endPeriod: '2023-04',
-        title: 'Project B'
-      }
+        title: 'Project B',
+      },
     ];
 
     const { result } = renderHook(() => useTimeline(timelineData, language, 'asc'));
@@ -32,7 +33,7 @@ describe('useTimeline', () => {
       { year: 2023, month: '09' },
       { year: 2023, month: '10' },
       { year: 2023, month: '11' },
-      { year: 2023, month: '12' }
+      { year: 2023, month: '12' },
     ];
 
     expect(result.current.timeline).toEqual(expectedTimeline);
@@ -43,8 +44,8 @@ describe('useTimeline', () => {
       {
         startPeriod: '2023-01',
         endPeriod: '2023-03',
-        title: 'Item 1'
-      }
+        title: 'Item 1',
+      },
     ];
 
     const { result } = renderHook(() => useTimeline(timelineData, 'en-US', 'desc'));
@@ -61,7 +62,7 @@ describe('useTimeline', () => {
       { year: 2023, month: '04' },
       { year: 2023, month: '03' },
       { year: 2023, month: '02' },
-      { year: 2023, month: '01' }
+      { year: 2023, month: '01' },
     ];
 
     expect(result.current.timeline).toEqual(expectedTimeline);
@@ -72,8 +73,8 @@ describe('useTimeline', () => {
       {
         startPeriod: '2022-01',
         endPeriod: '2022-03',
-        title: 'Test Timeline Item'
-      }
+        title: 'Test Timeline Item',
+      },
     ];
 
     const { result } = renderHook(() => useTimeline(timelineData, language, 'asc'));
@@ -88,8 +89,8 @@ describe('useTimeline', () => {
         duration: 3,
         startRowGrid: 1,
         endRowGrid: 4,
-        group: 1
-      }
+        group: 1,
+      },
     ]);
   });
 
@@ -98,8 +99,8 @@ describe('useTimeline', () => {
       {
         startPeriod: '2022-01',
         endPeriod: '2022-03',
-        title: 'Test Timeline Item'
-      }
+        title: 'Test Timeline Item',
+      },
     ];
 
     const { result } = renderHook(() => useTimeline(timelineData, language, 'asc'));
@@ -113,8 +114,8 @@ describe('useTimeline', () => {
       {
         startPeriod: '2022-01',
         endPeriod: '',
-        title: 'Test Timeline Item'
-      }
+        title: 'Test Timeline Item',
+      },
     ];
 
     const { result } = renderHook(() => useTimeline(timelineData, language, 'asc'));
@@ -128,13 +129,13 @@ describe('useTimeline', () => {
       {
         startPeriod: '2021-02',
         endPeriod: '2022-06',
-        title: 'Timeline Item 1'
+        title: 'Timeline Item 1',
       },
       {
         startPeriod: '2022-03',
         endPeriod: '2023-02',
-        title: 'Timeline Item 2'
-      }
+        title: 'Timeline Item 2',
+      },
     ];
 
     const { result } = renderHook(() => useTimeline(timelineData, language, 'asc'));
@@ -146,7 +147,7 @@ describe('useTimeline', () => {
         column: 1,
         startRowGrid: 2,
         endRowGrid: 19,
-        group: 1
+        group: 1,
       },
       {
         ...timelineData[1],
@@ -154,8 +155,8 @@ describe('useTimeline', () => {
         column: 2,
         startRowGrid: 15,
         endRowGrid: 27,
-        group: 1
-      }
+        group: 1,
+      },
     ];
 
     expect(result.current.processedData).toEqual(expectedProcessedData);
@@ -166,18 +167,18 @@ describe('useTimeline', () => {
       {
         startPeriod: '2022-02',
         endPeriod: '2022-06',
-        title: 'Timeline Item 1'
+        title: 'Timeline Item 1',
       },
       {
         startPeriod: '2022-03',
         endPeriod: '2022-07',
-        title: 'Timeline Item 2'
+        title: 'Timeline Item 2',
       },
       {
         startPeriod: '2022-04',
         endPeriod: '2022-08',
-        title: 'Timeline Item 3'
-      }
+        title: 'Timeline Item 3',
+      },
     ];
 
     const { result } = renderHook(() => useTimeline(timelineData, language, 'asc'));
@@ -189,7 +190,7 @@ describe('useTimeline', () => {
         column: 1,
         startRowGrid: 2,
         endRowGrid: 7,
-        group: 1
+        group: 1,
       },
       {
         ...timelineData[1],
@@ -197,7 +198,7 @@ describe('useTimeline', () => {
         column: 2,
         startRowGrid: 3,
         endRowGrid: 8,
-        group: 1
+        group: 1,
       },
       {
         ...timelineData[2],
@@ -205,8 +206,8 @@ describe('useTimeline', () => {
         column: 3,
         startRowGrid: 4,
         endRowGrid: 9,
-        group: 1
-      }
+        group: 1,
+      },
     ];
 
     expect(result.current.processedData).toEqual(expectedProcessedData);
@@ -217,13 +218,13 @@ describe('useTimeline', () => {
       {
         startPeriod: '2020-01',
         endPeriod: '2022-06',
-        title: 'Project 1'
+        title: 'Project 1',
       },
       {
         startPeriod: '2021-04',
         endPeriod: '2023-09',
-        title: 'Project 2'
-      }
+        title: 'Project 2',
+      },
     ];
 
     const { result } = renderHook(() => useTimeline(timelineData, language, 'asc'));
@@ -236,13 +237,13 @@ describe('useTimeline', () => {
       {
         startPeriod: '2020-01',
         endPeriod: '2022-06',
-        title: 'Project 1'
+        title: 'Project 1',
       },
       {
         startPeriod: '2021-04',
         endPeriod: '2022-09',
-        title: 'Project 2'
-      }
+        title: 'Project 2',
+      },
     ];
 
     const { result } = renderHook(() => useTimeline(timelineData, language, 'desc'));

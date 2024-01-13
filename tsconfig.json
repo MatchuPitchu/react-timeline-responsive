@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "types": ["vite/client", "vitest/globals", "node", "@testing-library/jest-dom"],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -20,9 +20,8 @@
     "outDir": "./dist",
     "paths": {
       "react-timeline-responsive": ["./src/lib/index.ts"]
-    },
-    "typeRoots": ["./src/lib/index.d.ts"]
+    }
   },
-  "include": ["src"],
+  "include": ["src/**/*", "tests"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

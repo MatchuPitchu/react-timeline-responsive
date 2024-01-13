@@ -48,7 +48,7 @@ const timelineData: TimelineData[] = [
     title: 'Title of event/period 1',
     subtitle: 'Subtitle 1', // optional
     content: ['Content 1 line 1', 'Content 1 line 2'], // optional
-    group: 1
+    group: 1,
   },
   {
     startPeriod: '2015-01',
@@ -56,8 +56,8 @@ const timelineData: TimelineData[] = [
     title: 'Title of event/period 2',
     subtitle: 'Subtitle 2',
     content: ['Content 2 line 1'],
-    group: 2
-  }
+    group: 2,
+  },
   // Add more events/periods here...
 ];
 
@@ -73,7 +73,7 @@ const theme: Theme = {
   colorText: '#e1e1e1',
   colorBackground: '#242528',
   colorBarHex: '#f7cc4b',
-  colorGradation: 4 // optional: default is 4
+  colorGradation: 4, // optional: default is 4
 };
 
 const MyTimeline = () => {

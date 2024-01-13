@@ -1,4 +1,4 @@
-import { setCSSVariable, hexToHsl } from './timeline.utils';
+import { hexToHsl, setCSSVariable } from './timeline.utils';
 
 describe('setCSSVariable function', () => {
   const initialColor = 'red';

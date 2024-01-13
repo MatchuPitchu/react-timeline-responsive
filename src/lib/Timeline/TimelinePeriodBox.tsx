@@ -19,7 +19,7 @@ export const TimelinePeriodBox = ({ item, isActive, getFormattedDateString, acce
       className={`timeline-periods-content__period ${isActive ? 'active' : ''}`}
       style={{
         gridArea: `${startRowGrid} / ${column} / ${endRowGrid}`,
-        boxShadow
+        boxShadow,
       }}
     >
       <div className="timeline-sticky-content">
